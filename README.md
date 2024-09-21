@@ -17,10 +17,10 @@ FDF is a project I worked on to represent a landscape as a wireframe 3D model. T
 
 - Here’s an example of a simple map:
   ```
- 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 10 10 0 0 10 10 0 0 10 10 0
-...
+  0 0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 10 10 0 0 10 10 0 0 10 10 0
+  ...
   ```
 
 ## Bonus Features
