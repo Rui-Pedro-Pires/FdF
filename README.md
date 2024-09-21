@@ -35,7 +35,7 @@ To install and run the project, follow these steps:
 
 1. Clone my repository:
    ```bash
-   git clone https://github.com/your-username/cub3D.git
+   git clone git@github.com:Rui-Pedro-Pires/FdF.git
    ```
 2. Move to the project directory:
    ```bash
