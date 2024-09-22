@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keys_handlers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:27:10 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/10 19:24:32 by masoares         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:55:13 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,28 +67,24 @@ int	projection_handle(int keysym, t_data *data)
 		data->angle_x = 0.567890;
 		data->angle_y = -0.012300;
 		data->angle_z = 0.743534;
-		data->render_status = 1;
 	}
 	else if (keysym == XK_2)
 	{
 		data->angle_x = 0.067890;
 		data->angle_y = 0;
 		data->angle_z = 0;
-		data->render_status = 1;
 	}
 	else if (keysym == XK_3)
 	{
 		data->angle_x = 0;
 		data->angle_y = 0;
 		data->angle_z = 0;
-		data->render_status = 1;
 	}
 	else if (keysym == XK_4)
 	{
 		data->angle_x = 7.853906;
 		data->angle_y = 0;
 		data->angle_z = 0;
-		data->render_status = 1;
 	}
 	return (0);
 }
@@ -101,9 +97,7 @@ int	color_handler(int keysym, t_data *data)
 		data->color_save = 2;
 	else if (keysym == XK_F3)
 		data->color_save = 3;
-	else if (keysym == XK_F4)
-		data->color_save = 4;
-	else if (keysym == XK_F5)
-		data->color_save = 5;
+	else if (keysym == XK_p)
+		data->add_color += 1;
 	return (0);
 }

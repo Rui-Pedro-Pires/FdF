@@ -1,71 +1,50 @@
+# FDF Project - "Bringing 3D Landscapes to Life"
 
-# FDF
+## Project Overview
+This project involves creating a **3D wireframe model** of a landscape from a grid of points using the **MiniLibX** graphical library. The goal was to render a 3D landscape in **isometric projection** based on data provided in a `.fdf` file, which contains a matrix of altitude points.
 
-## Description
-FDF is a project I worked on to represent a landscape as a wireframe 3D model. The main goal is to display a 3D object where all surfaces are outlined in lines, giving a dynamic, graphical representation of terrain or landscape data using points and lines. This project helped me understand basic graphics programming using the MiniLibX library and how to manipulate points in space, connect them, and visualize the scene from various angles.
+## Design and Development
+### 1. **File Parsing**
+The input is an `.fdf` file with a matrix of numbers representing the height of each point in the landscape. I implemented file reading using `get_next_line`, and parsed the numbers into a 2D array using `ft_split`.
 
-## Features
-- Wireframe model rendering of a landscape from a .fdf file.
-- Isometric projection to give a pseudo-3D view of the landscape.
-- Dynamic rendering of points in space based on x, y, and z coordinates.
-- Handling basic events like window resizing and exiting via ESC or window close button.
+### 2. **Isometric Projection**
+I used isometric projection to convert 3D points (x, y, z) into 2D coordinates for rendering. The projection gives the illusion of depth, making the 3D wireframe appear in a 2D window.
 
-### Map Format
-- The .fdf file represents a grid of points:
-  - Horizontal and vertical positions correspond to x and y coordinates.
-  - The numbers represent the altitude (z) at each point, creating a 3D effect.
+### 3. **Rendering with MiniLibX**
+Each point in the 3D model is connected by lines to its neighbors, forming a grid-like wireframe. I used **MiniLibX** to open a window and draw the lines between points.
 
-- Here’s an example of a simple map:
-  ```
-  0 0 0 0 0 0 0 0 0 0 0 0 0
-  0 0 0 0 0 0 0 0 0 0 0 0 0
-  0 0 10 10 0 0 10 10 0 0 10 10 0
-  ...
-  ```
+### 4. **Window Management**
+The program opens a window where the landscape is displayed. I added event handling to:
+- Close the window when the **ESC** key is pressed.
+- Ensure the window closes properly when the user clicks the close button.
 
-## Bonus Features
-I also added the following bonuses:
-- Additional projections like parallel or conic projection.
-- Zooming in and out of the model.
-- Translating and rotating the model.
-- Any extra features that could enhance the wireframe model visualization.
+## Key Challenges
+- **File Parsing**: Ensuring that the input file is read correctly and handling any formatting issues.
+- **Memory Management**: Preventing memory leaks by freeing all dynamically allocated memory.
+- **Projection and Rendering**: Properly mapping 3D coordinates to a 2D plane for smooth rendering.
 
-## Installation
-To install and run the project, follow these steps:
+## Bonus Part
+For the bonus, I added:
+- **Zoom**: Allowing the user to zoom in and out of the 3D model.
+- **Translation**: Enabling the user to move the model within the window.
 
-1. Clone my repository:
-   ```bash
-   git clone git@github.com:Rui-Pedro-Pires/FdF.git
-   ```
-2. Move to the project directory:
-   ```bash
-   cd FDF
-   ```
-3. Compile the project with the provided `Makefile`:
-   ```bash
-   make
-   ```
+## How to Compile and Run
 
-## Usage
-To render the 3D model, run the following command with a `.fdf` file:
+### Compilation
+To compile the project:
 ```bash
-./fdf path/to/map.fdf
+make
 ```
 
-### Controls:
-- Mouse and keyboard inputs can be added to control zoom, rotation, and translation.
-- Press `ESC` to close the window and exit.
+### Running the Program
+To run the program:
+```bash
+./fdf [file.fdf]
+```
 
-## Requirements
-- C programming language.
-- MiniLibX library for graphics rendering.
+Example:
+```bash
+./fdf example.fdf
+```
 
-## External Functions
-I used the following external functions:
-- System calls like `open`, `close`, `read`, `write`, `malloc`, `free`, `exit`.
-- Functions from the math library (`-lm`).
-- Functions from the MiniLibX library.
-
-## License
-This project is licensed under the MIT License.
-
+This runs the program using a `.fdf` file, rendering the 3D landscape in an isometric view.

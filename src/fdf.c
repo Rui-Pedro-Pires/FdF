@@ -3,20 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masoares <masoares@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ruiolive <ruiolive@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:20:08 by ruiolive          #+#    #+#             */
-/*   Updated: 2024/03/05 12:04:39 by masoares         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:38:46 by ruiolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	init_window(&data);
-	open_window(&data);
+	if (argc == 2)
+	{
+		creat_map(argv[1], &data);
+		open_window(&data);
+	}
+	else
+		write(2, "Wrong format, please enter <./fdf ./path/file_map.fdf>\n", 55);
 	exit (0);
 }
