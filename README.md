@@ -3,6 +3,11 @@
 ## Project Overview
 This project involves creating a **3D wireframe model** of a landscape from a grid of points using the **MiniLibX** graphical library. The goal was to render a 3D landscape in **isometric projection** based on data provided in a `.fdf` file, which contains a matrix of altitude points.
 
+---
+
+<img src="https://github.com/Rui-Pedro-Pires/FdF/blob/main/Screenshot%20from%202024-09-25%2011-40-15.png">
+
+---
 ## Design and Development
 ### 1. **File Parsing**
 The input is an `.fdf` file with a matrix of numbers representing the height of each point in the landscape. I implemented file reading using `get_next_line`, and parsed the numbers into a 2D array using `ft_split`.
